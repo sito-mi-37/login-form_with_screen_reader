@@ -5,7 +5,7 @@ import {
   faInfoCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {axiosInstance} from "./api/axios";
+import axios from "../api/axios";
 
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
@@ -60,7 +60,7 @@ const Register = () => {
     }
 
     try{
-        const res = await axiosInstance.post(REGISTER_URL,     
+        const res = await axios.post(REGISTER_URL,     
             JSON.stringify({username: user, password: pwd}),
             {
                 headers: {'Content-Type': 'application/json' },
